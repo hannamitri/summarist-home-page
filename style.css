@@ -37,10 +37,6 @@ button:disabled {
   opacity: 0.65;
 }
 
-input {
-  outline: none;
-}
-
 .row {
   max-width: 1070px;
   width: 100%;
@@ -50,20 +46,6 @@ input {
 
 .container {
   padding: 40px 0;
-  width: 100%;
-}
-
-.wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin-left: 200px;
-  width: calc(100% - 200px);
-  transition: all 300ms;
-}
-
-.wrapper__full {
-  margin-left: 0;
   width: 100%;
 }
 
@@ -89,34 +71,11 @@ input {
   transform: translateY(1px);
 }
 
-@media (max-width: 768px) {
-  .wrapper {
-    margin-left: 0;
-    width: 100%;
-  }
-}
-
-.btn--spinner {
-  width: 24px;
-  height: 24px;
-  color: #032b41;
-  animation: spin 1s linear infinite;
-}
-
 .home__cta--btn {
   max-width: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 /* HOME */
