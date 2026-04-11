@@ -2,12 +2,16 @@ import Container from "../ui/Container";
 import Button from "../ui/Button";
 import { BsStarFill } from "react-icons/bs";
 
+interface HomeReviewsProps {
+  onLoginClick: () => void;
+}
+
 const reviews = [
   {
     name: "Hanna M.",
     body: (
       <>
-        This app has been a <b>game-changer</b> for me! It's saved me so much
+        This app has been a <b>game-changer</b> for me! It&apos;s saved me so much
         time and effort in reading and comprehending books. Highly recommend it
         to all book lovers.
       </>
@@ -18,7 +22,7 @@ const reviews = [
     body: (
       <>
         I love this app! It provides <b>concise and accurate summaries</b> of
-        books in a way that is easy to understand. It's also very user-friendly
+        books in a way that is easy to understand. It&apos;s also very user-friendly
         and intuitive.
       </>
     ),
@@ -38,16 +42,15 @@ const reviews = [
     name: "Ryan R.",
     body: (
       <>
-        If you're a busy person who{" "}
-        <b>loves reading but doesn't have the time</b> to read every book in
-        full, this app is for you! The summaries are thorough and provide a
-        great overview of the book's content.
+        If you&apos;re a busy person who <b>loves reading but doesn&apos;t have the time</b>{" "}
+        to read every book in full, this app is for you! The summaries are
+        thorough and provide a great overview of the book&apos;s content.
       </>
     ),
   },
 ];
 
-export default function HomeReviews() {
+export default function HomeReviews({ onLoginClick }: HomeReviewsProps) {
   return (
     <section id="reviews">
       <Container>
@@ -71,7 +74,9 @@ export default function HomeReviews() {
         </div>
 
         <div className="reviews__btn--wrapper">
-          <Button className="home__cta--btn">Login</Button>
+          <Button className="home__cta--btn" onClick={onLoginClick}>
+            Login
+          </Button>
         </div>
       </Container>
     </section>

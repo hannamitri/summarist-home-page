@@ -1,7 +1,11 @@
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 
-export default function HomeHero() {
+interface HomeHeroProps {
+  onLoginClick: () => void;
+}
+
+export default function HomeHero({ onLoginClick }: HomeHeroProps) {
   return (
     <section id="landing">
       <Container>
@@ -17,10 +21,12 @@ export default function HomeHero() {
               <br className="remove--tablet" />
               individuals who barely have time to read,
               <br className="remove--tablet" />
-              and even people who don’t like to read.
+              and even people who don&apos;t like to read.
             </div>
 
-            <Button className="home__cta--btn">Login</Button>
+            <Button className="home__cta--btn" onClick={onLoginClick}>
+              Login
+            </Button>
           </div>
 
           <figure className="landing__image--mask">
