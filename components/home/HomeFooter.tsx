@@ -1,81 +1,42 @@
 import Container from "../ui/Container";
 
+const footerSections = [
+  {
+    title: "Actions",
+    links: ["Summarist Magazine", "Cancel Subscription", "Help", "Contact us"],
+  },
+  {
+    title: "Useful Links",
+    links: ["Pricing", "Summarist Business", "Gift Cards", "Authors & Publishers"],
+  },
+  {
+    title: "Company",
+    links: ["About", "Careers", "Partners", "Code of Conduct"],
+  },
+  {
+    title: "Other",
+    links: ["Sitemap", "Legal Notice", "Terms of Service", "Privacy Policies"],
+  },
+];
+
 export default function HomeFooter() {
   return (
     <section id="footer">
       <Container>
         <div className="footer__top--wrapper">
-          <div className="footer__block">
-            <div className="footer__link--title">Actions</div>
-            <div>
-              <div className="footer__link--wrapper">
-                <a className="footer__link">Summarist Magazine</a>
-              </div>
-              <div className="footer__link--wrapper">
-                <a className="footer__link">Cancel Subscription</a>
-              </div>
-              <div className="footer__link--wrapper">
-                <a className="footer__link">Help</a>
-              </div>
-              <div className="footer__link--wrapper">
-                <a className="footer__link">Contact us</a>
-              </div>
-            </div>
-          </div>
+          {footerSections.map((section) => (
+            <div className="footer__block" key={section.title}>
+              <div className="footer__link--title">{section.title}</div>
 
-          <div className="footer__block">
-            <div className="footer__link--title">Useful Links</div>
-            <div>
-              <div className="footer__link--wrapper">
-                <a className="footer__link">Pricing</a>
-              </div>
-              <div className="footer__link--wrapper">
-                <a className="footer__link">Summarist Business</a>
-              </div>
-              <div className="footer__link--wrapper">
-                <a className="footer__link">Gift Cards</a>
-              </div>
-              <div className="footer__link--wrapper">
-                <a className="footer__link">Authors & Publishers</a>
+              <div>
+                {section.links.map((link) => (
+                  <div className="footer__link--wrapper" key={link}>
+                    <a className="footer__link">{link}</a>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
-
-          <div className="footer__block">
-            <div className="footer__link--title">Company</div>
-            <div>
-              <div className="footer__link--wrapper">
-                <a className="footer__link">About</a>
-              </div>
-              <div className="footer__link--wrapper">
-                <a className="footer__link">Careers</a>
-              </div>
-              <div className="footer__link--wrapper">
-                <a className="footer__link">Partners</a>
-              </div>
-              <div className="footer__link--wrapper">
-                <a className="footer__link">Code of Conduct</a>
-              </div>
-            </div>
-          </div>
-
-          <div className="footer__block">
-            <div className="footer__link--title">Other</div>
-            <div>
-              <div className="footer__link--wrapper">
-                <a className="footer__link">Sitemap</a>
-              </div>
-              <div className="footer__link--wrapper">
-                <a className="footer__link">Legal Notice</a>
-              </div>
-              <div className="footer__link--wrapper">
-                <a className="footer__link">Terms of Service</a>
-              </div>
-              <div className="footer__link--wrapper">
-                <a className="footer__link">Privacy Policies</a>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
 
         <div className="footer__copyright--wrapper">

@@ -1,4 +1,8 @@
-export default function HomeNavbar() {
+interface HomeNavbarProps {
+  onLoginClick: () => void;
+}
+
+export default function HomeNavbar({ onLoginClick }: HomeNavbarProps) {
   return (
     <nav className="nav">
       <div className="nav__wrapper">
@@ -7,7 +11,9 @@ export default function HomeNavbar() {
         </figure>
 
         <ul className="nav__list--wrapper">
-          <li className="nav__list nav__list--login">Login</li>
+          <li className="nav__list nav__list--login" onClick={onLoginClick}>
+            Login
+          </li>
           <li className="nav__list nav__list--mobile">About</li>
           <li className="nav__list nav__list--mobile">Contact</li>
           <li className="nav__list nav__list--mobile">Help</li>
