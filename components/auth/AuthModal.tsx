@@ -72,7 +72,7 @@ export default function AuthModal({
 
           {mode === "login" && (
             <>
-              <GuestLoginButton />
+              <GuestLoginButton onAuthSuccess={onClose} />
               <AuthDivider />
               <GoogleLoginButton />
               <AuthDivider />
@@ -80,9 +80,15 @@ export default function AuthModal({
           )}
 
           {mode === "login" ? (
-            <LoginForm onSwitchToRegister={() => setMode("register")} />
+            <LoginForm
+              onSwitchToRegister={() => setMode("register")}
+              onAuthSuccess={onClose}
+            />
           ) : (
-            <RegisterForm onSwitchToLogin={() => setMode("login")} />
+            <RegisterForm
+              onSwitchToLogin={() => setMode("login")}
+              onAuthSuccess={onClose}
+            />
           )}
         </div>
       </div>

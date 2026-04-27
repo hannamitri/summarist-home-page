@@ -286,3 +286,10 @@
     right: -4px;
   }
 }
+
+.auth-error-message {
+  color: #c0392b;
+  font-size: 13px;
+  line-height: 1.4;
+  margin-top: -8px;
+}
